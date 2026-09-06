@@ -1,5 +1,5 @@
 // ============= API BASE URL =============
-const API_BASE_URL = window.location.origin;
+const API_BASE_URL = 'https://minecraftmobilebackend.onrender.com/';
 
 // ============= INITIALIZATION =============
 document.addEventListener('DOMContentLoaded', () => {
