@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Mobile - PvP Tier List</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%2351CF66' width='100' height='100'/><text x='50' y='50' font-size='60' font-weight='bold' fill='white' text-anchor='middle' dy='0.3em'>⚔</text></svg>">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="nav-icon">⚔️</span>
+                <span class="nav-title">Minecraft Mobile</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#tier-list" class="nav-link">Tier List</a></li>
+                <li><a href="#apply" class="nav-link">Apply</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
+                <li><a href="https://discord.gg/FQzUhm9xDu" target="_blank" class="nav-link discord-btn">Discord</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Minecraft Mobile</h1>
+            <p>Competitive PvP Tier List & Community</p>
+            <p class="hero-subtitle">Discover the best players, playstyles, and servers in the Minecraft Mobile community</p>
+            <div class="hero-buttons">
+                <a href="#tier-list" class="btn btn-primary">View Tier List</a>
+                <a href="#apply" class="btn btn-secondary">Apply Now</a>
+                <a href="https://discord.gg/FQzUhm9xDu" target="_blank" class="btn btn-discord">Join Discord</a>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-box">
+                <span class="stat-number" id="playerCount">0</span>
+                <span class="stat-label">Players</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-number">500+</span>
+                <span class="stat-label">Community</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-number">5</span>
+                <span class="stat-label">Tier Ranks</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <h2>About Minecraft Mobile</h2>
+            <p>We are a competitive PvP community dedicated to ranking and celebrating the best Minecraft Mobile players. Our tier list showcases top talent across multiple servers and playstyles.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">🏆</span>
+                    <h3>Competitive Rankings</h3>
+                    <p>Transparent ranking system based on skill, win rate, and community feedback</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">👥</span>
+                    <h3>Community Driven</h3>
+                    <p>Join hundreds of competitive players and content creators worldwide</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🎮</span>
+                    <h3>Multiple Playstyles</h3>
+                    <p>Support for Aggressive, Defensive, Balanced, Support, and Rush playstyles</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">📊</span>
+                    <h3>Detailed Statistics</h3>
+                    <p>Track win rates, K/D ratios, server performance, and player progress</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🎯</span>
+                    <h3>Monthly Updates</h3>
+                    <p>Regular tier list updates reflecting current player performance</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">💬</span>
+                    <h3>Active Discord</h3>
+                    <p>Real-time community chat, tournaments, and support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tier List Section -->
+    <section id="tier-list" class="tier-list">
+        <div class="container">
+            <h2>PvP Tier List</h2>
+            <p class="section-subtitle">Current top players ranked by skill and performance</p>
+            
+            <div class="tier-controls">
+                <input type="text" id="playerSearch" class="search-box" placeholder="Search players...">
+                <select id="filterPlaystyle" class="filter-select">
+                    <option value="">All Playstyles</option>
+                    <option value="Aggressive">Aggressive</option>
+                    <option value="Defensive">Defensive</option>
+                    <option value="Balanced">Balanced</option>
+                    <option value="Support">Support</option>
+                    <option value="Rush">Rush</option>
+                </select>
+            </div>
+
+            <div id="tiersContainer" class="tiers-container">
+                <div class="empty-state">
+                    <p>📋 No players yet. Be the first to apply!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apply Section -->
+    <section id="apply" class="apply-section">
+        <div class="container">
+            <h2>Join Our Tier List</h2>
+            <p class="section-subtitle">Choose your application method</p>
+            
+            <div class="apply-methods">
+                <div class="apply-card">
+                    <h3>📋 Form Application</h3>
+                    <p>Fill out our detailed application form</p>
+                    <button class="btn btn-primary" onclick="openFormModal()">Apply via Form</button>
+                </div>
+                <div class="apply-card">
+                    <h3>🎮 Discord Application</h3>
+                    <p>Apply directly in our Discord community</p>
+                    <a href="https://discord.gg/FQzUhm9xDu" target="_blank" class="btn btn-discord">Apply via Discord</a>
+                </div>
+                <div class="apply-card">
+                    <h3>👔 Staff Application</h3>
+                    <p>Want to join our moderation team?</p>
+                    <button class="btn btn-secondary" onclick="openStaffModal()">Apply for Staff</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Modal -->
+    <div id="applicationModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('applicationModal')">&times;</button>
+            <h2>Player Application</h2>
+            <form id="applicationForm" class="application-form">
+                <div class="form-step" id="step1">
+                    <h3>Step 1: Basic Information</h3>
+                    <div class="form-group">
+                        <label>Minecraft Username *</label>
+                        <input type="text" name="username" required placeholder="Your in-game name">
+                    </div>
+                    <div class="form-group">
+                        <label>Email *</label>
+                        <input type="email" name="email" required placeholder="your@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Discord Username *</label>
+                        <input type="text" name="discord" required placeholder="YourUsername#1234">
+                    </div>
+                    <div class="form-group">
+                        <label>Primary Server *</label>
+                        <select name="server" required>
+                            <option value="">Select a server</option>
+                            <option value="Hypixel">Hypixel</option>
+                            <option value="Cubecraft">Cubecraft</option>
+                            <option value="Mineplex">Mineplex</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Playstyle *</label>
+                        <select name="playstyle" required>
+                            <option value="">Select your playstyle</option>
+                            <option value="Aggressive">Aggressive - Fast-paced, offensive</option>
+                            <option value="Defensive">Defensive - Tank, sustained</option>
+                            <option value="Balanced">Balanced - Flexible approach</option>
+                            <option value="Support">Support - Team-oriented</option>
+                            <option value="Rush">Rush - Early game dominator</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="nextStep(2)">Next Step →</button>
+                </div>
+
+                <div class="form-step" id="step2" style="display: none;">
+                    <h3>Step 2: Questions About You</h3>
+                    <div class="form-group">
+                        <label>How long have you been playing competitive Minecraft? *</label>
+                        <select name="experience" required>
+                            <option value="">Select</option>
+                            <option value="less_6m">Less than 6 months</option>
+                            <option value="6m_1y">6-12 months</option>
+                            <option value="1y_2y">1-2 years</option>
+                            <option value="more_2y">More than 2 years</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>What's your approximate win rate? *</label>
+                        <select name="winrate" required>
+                            <option value="">Select</option>
+                            <option value="50">Below 50%</option>
+                            <option value="50-60">50-60%</option>
+                            <option value="60-70">60-70%</option>
+                            <option value="70-80">70-80%</option>
+                            <option value="80">Above 80%</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Do you have videos of your gameplay? (YouTube/Twitch)</label>
+                        <input type="url" name="videos" placeholder="https://youtube.com/...">
+                    </div>
+                    <div class="form-group">
+                        <label>Tell us why you deserve to be on this tier list *</label>
+                        <textarea name="reason" required placeholder="Explain your skills and accomplishments..." rows="4"></textarea>
+                    </div>
+                    <div class="button-group">
+                        <button type="button" class="btn btn-secondary" onclick="nextStep(1)">← Back</button>
+                        <button type="button" class="btn btn-primary" onclick="nextStep(3)">Next Step →</button>
+                    </div>
+                </div>
+
+                <div class="form-step" id="step3" style="display: none;">
+                    <h3>Step 3: Verification Questions</h3>
+                    <div id="verificationQuestionsContainer"></div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" name="agree" required>
+                            I agree to the code of conduct and community guidelines *
+                        </label>
+                    </div>
+                    <div class="button-group">
+                        <button type="button" class="btn btn-secondary" onclick="nextStep(2)">← Back</button>
+                        <button type="submit" class="btn btn-primary">Submit Application</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Staff Application Modal -->
+    <div id="staffModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('staffModal')">&times;</button>
+            <h2>Staff Application</h2>
+            <form id="staffForm" class="application-form">
+                <div class="form-group">
+                    <label>Minecraft Username *</label>
+                    <input type="text" name="username" required placeholder="Your in-game name">
+                </div>
+                <div class="form-group">
+                    <label>Email *</label>
+                    <input type="email" name="email" required placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label>Discord Username *</label>
+                    <input type="text" name="discord" required placeholder="YourUsername#1234">
+                </div>
+                <div class="form-group">
+                    <label>Position Applying For *</label>
+                    <select name="position" required>
+                        <option value="">Select</option>
+                        <option value="Moderator">Moderator</option>
+                        <option value="Verifier">Verifier</option>
+                        <option value="Events">Events Coordinator</option>
+                        <option value="Manager">Manager</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Years of Moderation Experience *</label>
+                    <input type="number" name="experience" required min="0" placeholder="0">
+                </div>
+                <div class="form-group">
+                    <label>Why do you want to join our staff team? *</label>
+                    <textarea name="reason" required placeholder="Tell us about your motivation..." rows="5"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Do you agree to the staff code of conduct? *</label>
+                    <select name="agree" required>
+                        <option value="">Select</option>
+                        <option value="yes">Yes, I agree</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Staff Application</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content success-modal">
+            <button class="modal-close" onclick="closeModal('successModal')">&times;</button>
+            <div class="success-icon">✓</div>
+            <h2>Application Submitted!</h2>
+            <p id="successMessage"></p>
+            <p class="success-note">A ticket will be created in our Discord server for your verification.</p>
+            <a href="https://discord.gg/FQzUhm9xDu" target="_blank" class="btn btn-discord">Join Discord for Updates</a>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <p class="section-subtitle">Find answers to common questions about Minecraft Mobile</p>
+            
+            <div class="faq-search">
+                <input type="text" id="faqSearch" class="search-box" placeholder="Search FAQs...">
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-container">
+                    <div id="faqListContainer" class="faq-list"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Minecraft Mobile</h4>
+                    <p>Competitive PvP Tier List Community</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#tier-list">Tier List</a></li>
+                        <li><a href="#apply">Apply</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="https://discord.gg/FQzUhm9xDu" target="_blank">Discord</a></li>
+                        <li><a href="#apply">Apply Form</a></li>
+                        <li><a href="https://forms.gle/49LUgAW7TmLzFhmK7" target="_blank">Google Form</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow</h4>
+                    <ul>
+                        <li><a href="#">YouTube</a></li>
+                        <li><a href="#">Twitch</a></li>
+                        <li><a href="#">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Minecraft Mobile. All rights reserved. | Icons from <a href="https://fonts.google.com" target="_blank">Google Fonts</a></p>
+                <p>Not affiliated with Mojang Studios or Microsoft</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
