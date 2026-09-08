@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: minecraft-mobile
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DISCORD_INVITE_URL
+        value: https://discord.gg/FQzUhm9xDu
+      - key: TIER_APPLY_URL
+        value: https://forms.gle/49LUgAW7TmLzFhmK7
+      - key: YOUTUBE_CHANNEL_HANDLE
+        value: '@HeyHazik'
+      - key: YOUTUBE_MAX_VIDEOS
+        value: '12'
+      - key: FRONTEND_ORIGIN
+        value: https://hazik-mir.github.io
+      # Set GOOGLE_CLIENT_ID, SESSION_SECRET, DATABASE_URL, YOUTUBE_API_KEY in Render dashboard.
