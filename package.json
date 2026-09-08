@@ -1,0 +1,19 @@
+{
+  "name": "minecraft-mobile-community",
+  "version": "3.0.0",
+  "private": true,
+  "description": "Minecraft Mobile independent Bedrock community portal with real content, YouTube integration and Google authentication.",
+  "main": "server.js",
+  "scripts": {"start":"node server.js","check":"node --check server.js && node --check public/app.js"},
+  "engines": {"node": ">=20"},
+  "dependencies": {
+    "cookie-parser":"^1.4.7",
+    "cors":"^2.8.5",
+    "express":"^5.1.0",
+    "express-rate-limit":"^8.0.1",
+    "google-auth-library":"^10.4.1",
+    "helmet":"^8.1.0",
+    "jsonwebtoken":"^9.0.2",
+    "pg":"^8.16.3"
+  }
+}
